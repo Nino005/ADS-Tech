@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contatti e preventivi | Antonio Di Sandro</title>
+<meta name="description" content="Richiedi informazioni o un preventivo per siti web, assistenza informatica, networking e corsi di formazione digitale.">
+<meta name="author" content="Antonio Di Sandro">
+<meta property="og:title" content="Contatti e preventivi | Antonio Di Sandro">
+<meta property="og:description" content="Richiedi informazioni o un preventivo per siti web, assistenza informatica, networking e corsi di formazione digitale.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b0b0d">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="index.html">Antonio <span>Di Sandro</span></a>
+<nav aria-label="Principale"><button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+<ul id="menu">
+<li><a href="index.html" >Home</a></li><li><a href="servizi.html" >Servizi</a></li><li><a href="formazione.html" >Formazione</a></li><li><a href="chi-sono.html" >Chi sono</a></li><li><a href="contatti.html" aria-current="page">Contatti</a></li>
+</ul></nav></div></header>
+<main>
+<div class="wrap page-title"><h1 style="font-size:clamp(32px,5vw,50px)">Richiedi informazioni o un preventivo</h1></div>
+<section><div class="wrap"><p class="lead">Raccontami di cosa hai bisogno: ti rispondo via email appena possibile.</p>
+<div class="formbox"><form id="form" novalidate>
+<div class="hp" aria-hidden="true"><label>Non compilare<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+<div class="row"><div class="field"><label for="nome">Nome e cognome</label><input id="nome" name="nome" autocomplete="name" required><div class="err" id="e-nome"></div></div>
+<div class="field"><label for="email">Indirizzo email</label><input id="email" name="email" type="email" autocomplete="email" required><div class="err" id="e-email"></div></div></div>
+<div class="field"><label for="servizio">Servizio richiesto</label><select id="servizio" name="servizio" required><option value="">Seleziona un servizio</option><option>Realizzazione siti web</option><option>Assistenza informatica</option><option>Networking</option><option>Corso di intelligenza artificiale</option><option>Corso Microsoft Word, Excel e PowerPoint</option><option>Corso di networking</option><option>Corso di cybersecurity di base</option><option>Altro</option></select><div class="err" id="e-servizio"></div></div>
+<div class="field"><label for="messaggio">Descrizione delle necessità</label><textarea id="messaggio" name="messaggio" required></textarea><div class="err" id="e-messaggio"></div></div>
+<div class="row"><div class="field"><label for="budget">Budget indicativo <small>(facoltativo)</small></label><input id="budget" name="budget" placeholder="Es. 300 €"></div>
+<div class="field"><label for="modalita">Modalità preferita</label><select id="modalita" name="modalita"><option>Da remoto</option><option>In presenza (se disponibile)</option></select></div></div>
+<div class="field check"><input type="checkbox" id="privacy-ok" name="privacy" required><label for="privacy-ok">Ho letto l’<a href="#privacy">informativa privacy</a> e acconsento al trattamento dei dati per rispondere alla mia richiesta.</label></div>
+<div class="err" id="e-privacy"></div>
+<div class="actions"><button class="btn btn-primary" type="submit" id="send">Invia richiesta</button></div>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+</form></div></div></section>
+<section id="privacy" class="alt"><div class="wrap"><h2>Informativa privacy</h2>
+<p><b>Titolare del trattamento:</b> Antonio Di Sandro – contattabile tramite il modulo in questa pagina.</p>
+<p>Dati raccolti dal modulo: nome e cognome, email, servizio richiesto, descrizione delle necessità, budget indicativo (facoltativo) e modalità preferita.</p>
+<ul><li><b>Finalità e base giuridica:</b> rispondere alla tua richiesta (misure precontrattuali, art. 6.1.b GDPR) e, per l’invio del modulo, il tuo consenso (art. 6.1.a).</li>
+<li><b>Destinatari:</b> i dati sono inoltrati via email al titolare tramite il servizio di inoltro moduli FormSubmit, fornitore tecnico.</li>
+<li><b>Conservazione:</b> per il tempo necessario a gestire la richiesta e gli eventuali rapporti successivi.</li>
+<li><b>Diritti:</b> accesso, rettifica, cancellazione, limitazione, opposizione contattandomi tramite il modulo in questa pagina; reclamo al Garante per la protezione dei dati personali.</li>
+</ul>
+<p>Il sito non usa cookie di profilazione né strumenti di tracciamento.</p></div></section>
+</main>
+<footer><div class="wrap foot">
+<div><b style="color:var(--text)">Antonio Di Sandro</b><br>IT Solutions &amp; Digital Training</div>
+<div><a href="servizi.html">Servizi</a> · <a href="formazione.html">Formazione</a> · <a href="chi-sono.html">Chi sono</a> · <a href="contatti.html">Contatti</a> · <a href="contatti.html#privacy">Privacy</a><br><!-- Aggiungere qui P.IVA / dati fiscali quando disponibili --><small>© <span id="y"></span> Antonio Di Sandro</small></div>
+</div></footer>
+<script src="effects.js" defer></script>
+<script src="script.js"></script>
+</body>
+</html>
