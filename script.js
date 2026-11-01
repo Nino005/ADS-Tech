@@ -1,6 +1,6 @@
 (function(){
 // ===== CONFIGURAZIONE =====
-var TO_EMAIL=["ads.tech.italia","gmail.com"].join("@"); // destinatario delle richieste
+var FORM_ID="f54d7b66fdec0bb1996f331662f2f98c"; // codice FormSubmit: sostituisce l'indirizzo email
 // ==========================
 var $=function(i){return document.getElementById(i)};
 var mb=$("menuBtn"),mn=$("menu");
@@ -25,12 +25,9 @@ if(f.elements["_honey"].value)return;
 if(!validate()){var b=f.querySelector(".invalid");if(b)b.focus();return}
 var btn=$("send");btn.disabled=true;btn.textContent="Invio in corso…";
 var d={nome:$("nome").value.trim(),email:$("email").value.trim(),servizio:$("servizio").value,messaggio:$("messaggio").value.trim(),budget:$("budget").value.trim()||"Non indicato",modalita:$("modalita").value,_subject:"Nuova richiesta dal sito: "+$("servizio").value,_replyto:$("email").value.trim(),_template:"table",_captcha:"true"};
-fetch("https://formsubmit.co/ajax/"+encodeURIComponent(TO_EMAIL),{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(d)})
+fetch("https://formsubmit.co/ajax/"+FORM_ID,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(d)})
 .then(function(r){return r.json().then(function(j){if(!r.ok||String(j&&j.success)==="false")throw 0;})})
 .then(function(){f.reset();show("ok","Richiesta inviata. Ti risponderò all’indirizzo email indicato appena possibile.")})
-.catch(function(){show("ko","Invio non riuscito. I dati inseriti sono ancora qui: riprova tra poco oppure ");
-var a=document.createElement("a");a.textContent="invia dal tuo programma di posta";a.style.cssText="color:inherit;text-decoration:underline";
-a.href="mailto:"+TO_EMAIL+"?subject="+encodeURIComponent("Richiesta dal sito: "+$("servizio").value)+"&body="+encodeURIComponent("Nome: "+d.nome+"\nEmail: "+d.email+"\nModalità: "+d.modalita+"\nBudget: "+d.budget+"\n\n"+d.messaggio);
-st.appendChild(a);st.appendChild(document.createTextNode("."))})
+.catch(function(){show("ko","Invio non riuscito. I dati inseriti sono ancora qui: riprova tra poco.")})
 .finally(function(){btn.disabled=false;btn.textContent="Invia richiesta"})});
 })();
