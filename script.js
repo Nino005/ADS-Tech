@@ -1,6 +1,6 @@
 (function(){
 // ===== CONFIGURAZIONE =====
-var TO_EMAIL=["Antonio.disandro2005","gmail.com"].join("@"); // destinatario delle richieste
+var TO_EMAIL=["ads.tech.italia","gmail.com"].join("@"); // destinatario delle richieste
 // ==========================
 var $=function(i){return document.getElementById(i)};
 var mb=$("menuBtn"),mn=$("menu");
